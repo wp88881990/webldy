@@ -1,76 +1,101 @@
-# 项目部署指南：Cloudflare Pages
+# 项目部署指南
 
-## 将React项目部署到Cloudflare Pages的详细教程
+## 项目介绍
+这是一个基于React、TypeScript和Vite构建的单页应用，使用Tailwind CSS进行样式设计。本指南将帮助您将项目成功部署到Cloudflare Pages。
 
-### 前提条件
-- 拥有Cloudflare账户（如无，需先在[Cloudflare官网](https://www.cloudflare.com/)注册）
-- 项目已托管在GitHub、GitLab或Bitbucket等Git仓库
-- 本地已安装Node.js和pnpm
+## 环境要求
+- Node.js v18+
+- pnpm v8+
+- Git
+
+## 本地开发
+1. 克隆仓库
+```bash
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+```
+
+2. 安装依赖
+```bash
+pnpm install
+```
+
+3. 启动开发服务器
+```bash
+pnpm dev
+```
+
+4. 构建项目
+```bash
+pnpm build
+```
+
+## Cloudflare Pages部署步骤
 
 ### 准备工作
+1. 确保您的代码已推送到GitHub仓库
+2. 创建Cloudflare账户并登录：https://dash.cloudflare.com/
+3. 在Cloudflare控制台中选择"Pages"
 
-1. **确保项目可以正常构建**
-   在本地执行构建命令，确保没有错误：
-   ```bash
-   pnpm build
-   ```
-   
-   构建成功后，项目文件将生成在`dist/static`目录下（根据您项目的`package.json`配置）
+### 部署流程
+1. 点击"连接到Git"
+2. 选择您的项目仓库
+3. 在构建设置中配置：
+   - 框架预设：**None**（不要选择Vite，我们需要自定义配置）
+   - 构建命令：`pnpm install --no-frozen-lockfile && pnpm build`
+   - 输出目录：`dist/static`
+   - 根目录：留空（使用默认值）
 
-2. **将项目推送到Git仓库**
-   确保所有更改已提交并推送到远程仓库：
-   ```bash
-   git add .
-   git commit -m "准备部署到Cloudflare Pages"
-   git push
-   ```
+4. 环境变量（可选）：
+   如果项目需要环境变量，可以在此处添加
 
-### 部署步骤
+5. 点击"保存并部署"
 
-1. **登录Cloudflare账户**
-   访问[Cloudflare Pages](https://pages.cloudflare.com/)并登录您的账户
+## 解决常见部署问题
 
-2. **创建新项目**
-   - 点击"Create a project"按钮
-   - 选择"Connect to Git"
-   - 授权Cloudflare访问您的Git仓库
-   - 选择您的项目仓库
+### 锁文件不匹配错误
+如果遇到`ERR_PNPM_OUTDATED_LOCKFILE`错误：
 
-3. **配置构建设置**
-   在项目设置页面，配置以下选项：
-   - **框架预设**: 选择"Vite"
-   - **构建命令**: `pnpm build`
-   - **构建输出目录**: `dist/static`
-   - **根目录**: 保持默认(/)
+1. 确保本地环境已安装最新依赖：
+```bash
+pnpm install
+```
 
-4. **环境变量配置** (如需要)
-   如果项目需要环境变量，可以在"Environment variables"部分添加
+2. 提交更新后的锁文件：
+```bash
+git add pnpm-lock.yaml
+git commit -m "Update lockfile"
+git push
+```
 
-5. **开始部署**
-   点击"Save and Deploy"按钮开始部署过程
+3. 或者在Cloudflare构建命令中使用：
+```bash
+pnpm install --no-frozen-lockfile && pnpm build
+```
 
-6. **等待部署完成**
-   Cloudflare Pages将自动拉取代码、安装依赖并执行构建命令
-   部署完成后，您将看到部署成功的消息和项目的URL
+### 构建命令配置
+在Cloudflare Pages设置中，确保构建命令设置为：
+```bash
+pnpm install --no-frozen-lockfile && pnpm build
+```
 
-### 后续操作
+这将禁用CI环境中的锁文件检查，解决大多数依赖安装问题。
 
-1. **访问您的网站**
-   通过Cloudflare提供的`.pages.dev`域名访问您的网站
+## 故障排除
 
-2. **自定义域名设置** (可选)
-   如果需要使用自定义域名：
-   - 在项目设置中点击"Custom domains"
-   - 点击"Set up a custom domain"
-   - 输入您的域名并按照指示完成DNS配置
+### 依赖安装失败
+- 确保Node.js版本兼容（项目推荐v22+）
+- 检查网络连接，确保可以访问npm仓库
 
-3. **持续部署**
-   Cloudflare Pages将自动监听您的Git仓库，当您推送到主分支时，将自动触发新的部署
+### 构建失败
+- 检查是否有编译错误：在本地运行`pnpm build`测试
+- 确保所有环境变量都已正确设置
+- 检查输出目录是否与vite.config.ts中的配置一致
 
-### 故障排除
+## 项目结构说明
+- `src/` - 源代码目录
+- `public/` - 静态资源
+- `dist/` - 构建输出目录（部署目标）
 
-- **构建失败**: 检查构建日志，确保所有依赖已正确安装，构建命令正确
-- **页面空白**: 检查构建输出目录是否正确设置为`dist/static`
-- **资源加载问题**: 确保项目中使用相对路径引用资源
-
-如需更多帮助，请参考[Cloudflare Pages官方文档](https://developers.cloudflare.com/pages/)
+## 联系方式
+如有部署问题，请联系项目维护者获取支持。
