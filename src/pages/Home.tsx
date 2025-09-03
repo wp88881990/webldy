@@ -200,7 +200,7 @@ export default function Home() {
                             color: "#0A0A0A"
                         }}>ABY ODNIEŚĆ SUKCES!</span><br />
                 </h1>
-                <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" />
+                  <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
                 <p
                     className="text-gray-600 mt-6"
                     style={{
@@ -228,9 +228,9 @@ export default function Home() {
                         alt="Investment performance chart showing 163% profit in 15 months"
                         className="w-full h-auto rounded-lg shadow-sm" />
                 </div>
-                <div className="text-center">
-                    <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" />
-                </div>
+             <div className="text-center">
+                 <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
+            </div>
             </div>
             <div className="mb-16 flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/2">
@@ -250,9 +250,9 @@ export default function Home() {
                         className="w-full h-auto max-h-[300px] object-contain mx-auto" />
                 </div>
             </div>
-            <div className="text-center">
-                <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" />
-            </div>
+         <div className="text-center">
+             <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
+        </div>
             <div className="mb-16">
                 <div
                     className="webinar-section-wrapper"
@@ -290,9 +290,9 @@ export default function Home() {
                                     fontSize: "18px"
                                 }}>Uczestnictwo w webinarze jest bezpłatne. Ilość miejsc w pokoju webinarowym jest ograniczona tylko do 100, dlatego warto się zarejestrować już teraz, aby otrzymać wspomnianą powyżej mapę myśli.</p>
                         </div>
-                        <div className="text-center">
-                            <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" />
-                        </div>
+                 <div className="text-center">
+                     <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
+                </div>
                     </div>
                     <div className="space-y-6">
                         <div>
@@ -317,9 +317,9 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="text-center mt-10">
-                    <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" />
-                </div>
+         <div className="text-center mt-10">
+             <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
+        </div>
             </div>
             <footer
                 className="text-center text-gray-500 text-sm pt-8 border-t border-gray-200"
