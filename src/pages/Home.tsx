@@ -153,19 +153,16 @@ const CountdownTimer = () => {
 
 const CtaButton = (
     {
-        text,
-        url
+        text
     }: {
         text: string;
-        url: string;
     }
 ) => {
     return (
-        <a
-            href={url}
-            className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-lg text-lg transition duration-300 transform hover:scale-105 uppercase text-center shadow-lg hover:shadow-xl w-full sm:w-auto inline-block">
+        <button
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-10 rounded-lg text-lg transition duration-300 transform hover:scale-105 uppercase text-center shadow-lg hover:shadow-xl w-full sm:w-auto">
             {text}
-        </a>
+        </button>
     );
 };
 
