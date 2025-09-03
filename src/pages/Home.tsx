@@ -168,7 +168,7 @@ const CtaButton = (
 
 export default function Home() {
     return (
-        <div className="max-w-4xl mx-auto px-4 py-8 bg-white">
+        <div className="max-w-[950px] mx-auto px-4 py-8 bg-white">
             <div className="text-center mb-16">
                 <div className="w-[140px] h-[140px] mx-auto mb-6 rounded-full bg-gray-200">
                     <img
@@ -229,7 +229,7 @@ export default function Home() {
                         className="w-full h-auto rounded-lg shadow-sm" />
                 </div>
                 <div className="text-center">
-                     <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" />
+                    <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" />
                 </div>
             </div>
             <div className="mb-16 flex flex-col md:flex-row items-center gap-8">
