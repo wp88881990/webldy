@@ -142,7 +142,11 @@ const CountdownTimer = () => {
     return (
         <div className="flex justify-center gap-8 mt-8">
             {Object.entries(timeLeft).map(([interval, value]) => <div key={interval} className="text-center">
-                <div className="text-4xl font-bold text-emerald-800">{value}</div>
+                <div
+                    className="text-4xl font-bold"
+                    style={{
+                        color: "rgb(2,159,138)"
+                    }}>{value}</div>
                 <div className="text-sm text-gray-600 uppercase mt-1 font-bold">
                     {interval === "days" ? "DNI" : interval === "hours" ? "GODZINY" : interval === "minutes" ? "MINUTY" : "SEKUNDY"}
                 </div>
@@ -171,7 +175,7 @@ const CtaButton = (
 
 export default function Home() {
     return (
-        <div className="max-w-[950px] mx-auto px-4 py-8 bg-white">
+        <div className="max-w-[950px] mx-auto px-4 py-8">
             <div className="text-center mb-16">
                 <div className="w-[140px] h-[140px] mx-auto mb-6 rounded-full bg-gray-200">
                     <img
@@ -195,15 +199,11 @@ export default function Home() {
                             fontSize: "2rem",
                             whiteSpace: "preserve",
                             outline: "none !important"
-                        }}>WSZYSTKO CO MUSISZ WIEDZIEĆ O INWESTOWANIU
-                                                                                                                                                                                                                                                                                                                    </span> <br />INWESTOWANIU<br />
-                    <span
-                        className="text-orange-500"
-                        style={{
-                            color: "#0A0A0A"
-                        }}>ABY ODNIEŚĆ SUKCES!</span><br />
+                        }}>WSZYSTKO CO MUSISZ WIEDZIEĆ O INWESTOWANIU        ABY ODNIEŚĆ SUKCES!</span><br />
                 </h1>
-                  <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
+                <CtaButton
+                    text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!"
+                    url={import.meta.env.VITE_BUTTON_URL || "#"} />
                 <p
                     className="text-gray-600 mt-6"
                     style={{
@@ -231,9 +231,11 @@ export default function Home() {
                         alt="Investment performance chart showing 163% profit in 15 months"
                         className="w-full h-auto rounded-lg shadow-sm" />
                 </div>
-             <div className="text-center">
-                 <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
-            </div>
+                <div className="text-center">
+                    <CtaButton
+                        text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!"
+                        url={import.meta.env.VITE_BUTTON_URL || "#"} />
+                </div>
             </div>
             <div className="mb-16 flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/2">
@@ -253,9 +255,11 @@ export default function Home() {
                         className="w-full h-auto max-h-[300px] object-contain mx-auto" />
                 </div>
             </div>
-         <div className="text-center">
-             <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
-        </div>
+            <div className="text-center">
+                <CtaButton
+                    text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!"
+                    url={import.meta.env.VITE_BUTTON_URL || "#"} />
+            </div>
             <div className="mb-16">
                 <div
                     className="webinar-section-wrapper"
@@ -273,7 +277,11 @@ export default function Home() {
                                 <div className="text-green-600 mr-3 mt-1">
                                     <CheckSquare size={20} />
                                 </div>
-                                <p className="text-gray-700">{item}</p>
+                                <p
+                                    className="text-gray-700"
+                                    style={{
+                                        fontSize: "18px"
+                                    }}>{item}</p>
                             </div>)}
                         </div>
                         <div
@@ -293,9 +301,11 @@ export default function Home() {
                                     fontSize: "18px"
                                 }}>Uczestnictwo w webinarze jest bezpłatne. Ilość miejsc w pokoju webinarowym jest ograniczona tylko do 100, dlatego warto się zarejestrować już teraz, aby otrzymać wspomnianą powyżej mapę myśli.</p>
                         </div>
-                 <div className="text-center">
-                     <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
-                </div>
+                        <div className="text-center">
+                            <CtaButton
+                                text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!"
+                                url={import.meta.env.VITE_BUTTON_URL || "#"} />
+                        </div>
                     </div>
                     <div className="space-y-6">
                         <div>
@@ -320,9 +330,11 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-         <div className="text-center mt-10">
-             <CtaButton text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!" url={import.meta.env.VITE_BUTTON_URL || '#'} />
-        </div>
+                <div className="text-center mt-10">
+                    <CtaButton
+                        text="KLIKNĘJ TUTAJ ABY ZAREZERWOWAĆ MIEJSCE!"
+                        url={import.meta.env.VITE_BUTTON_URL || "#"} />
+                </div>
             </div>
             <footer
                 className="text-center text-gray-500 text-sm pt-8 border-t border-gray-200"

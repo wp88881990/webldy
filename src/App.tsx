@@ -14,7 +14,7 @@ export default function App() {
     <AuthContext.Provider
       value={{ isAuthenticated, setIsAuthenticated, logout }}
     >
-      <div className="bg-white min-h-screen">
+        <div className="bg-gradient-to-b from-white to-[rgb(2,159,138)] from-[42.4%] to-[42.4%] min-h-screen">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/other" element={<div className="text-center text-xl">Other Page - Coming Soon</div>} />
